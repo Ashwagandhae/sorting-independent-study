@@ -9,7 +9,7 @@ def gen_unsorted_arr(length: int, rang: int) -> [int]:
 TEST_ARRS = {
     "small": [gen_unsorted_arr(10, 100)],
     "medium": [gen_unsorted_arr(100, 1000)],
-    "large": [gen_unsorted_arr(1000, 10000)],
+    "large": [gen_unsorted_arr(1000, 100000)],
 }
 
 
@@ -51,8 +51,6 @@ def test_sorts(fns: [callable([int])], arr: {str: [int]}):
 
 if __name__ == "__main__":
     test_sorts(
-        [
-            insertion_sort,
-        ],
+        SORTS,
         TEST_ARRS,
     )
