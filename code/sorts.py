@@ -1,7 +1,9 @@
 from util import swap
+from typing import List
+import numpy as np
 
 
-def insertion_sort(arr: [int]):
+def insertion_sort(arr: List[int]):
     for j in range(1, len(arr)):
         key = arr[j]
         # insert arr[j] into the sorted sequence arr[1..j-1]
@@ -11,7 +13,7 @@ def insertion_sort(arr: [int]):
             i -= 1
 
 
-def selection_sort(arr: [int]):
+def selection_sort(arr: List[int]):
     for i in range(len(arr)):
         # get smallest element in arr[i..len(arr)]
         min_index = i
@@ -22,8 +24,8 @@ def selection_sort(arr: [int]):
         swap(arr, i, min_index)
 
 
-def merge_sort(arr: [int]):
-    def merge(arr: [int], p: int, q: int, r: int):
+def merge_sort(arr: List[int]):
+    def merge(arr: List[int], p: int, q: int, r: int):
         # arr[p..q] and arr[q+1..r] are sorted
         # merge them into arr[p..r]
         n1 = q - p + 1
@@ -56,7 +58,7 @@ def merge_sort(arr: [int]):
             j += 1
             k += 1
 
-    def rec(arr: [int], p: int, r: int):
+    def rec(arr: List[int], p: int, r: int):
         if p < r:
             q = (p + r) // 2
             rec(arr, p, q)
