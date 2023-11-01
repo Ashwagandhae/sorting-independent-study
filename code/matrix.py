@@ -101,7 +101,7 @@ def benchmark(func, *args):
     print(f"{func.__name__} took {end - start} seconds")
 
 
-n = 512
+n = 128
 a = np.random.randint(10, size=(n, n))
 b = np.random.randint(10, size=(n, n))
 
